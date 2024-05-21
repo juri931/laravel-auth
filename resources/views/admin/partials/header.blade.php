@@ -14,7 +14,10 @@
             <p class="nav-link text-dark">{{ Auth::user()->name }}</p>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
         </li>
     </ul>
     </div>
