@@ -19,6 +19,12 @@
         </div>
     @endif
 
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
+    @endif
+
     <div class="my-4">
         <form action="{{ route('admin.categories.store') }}" method="POST" class="d-flex">
             @csrf
