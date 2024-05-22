@@ -72,6 +72,16 @@ class CategoryController extends Controller
             'name.min' => 'Il nome della categoria deve avere almeno 2 caratteri',
             'name.max' => 'Il nome della categoria deve avere al massimo 20 caratteri',
         ]);
+
+        $exists = Category::where('name', $request->name)->first();
+        if ($exists) {
+            return redirect()->route('admin.categories.index')->with('error', 'Categoria già esistente');
+        }else{
+            $val_data['slug'] = Helper::generateSlug($request->name, Category::class);
+            $category->update($val_data);
+
+            return redirect()->route('admin.categories.index')->with('success', 'Categoria creata correttamente');
+        }
     }
 
     /**
