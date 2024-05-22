@@ -1,13 +1,31 @@
 @import "~bootstrap/scss/bootstrap";
 
 header {
-    height: 73px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-wrapper {
-    height: calc(100vh - 73px);
+    height: calc(100vh - 60px);
 }
 
 aside {
-    width: 150px;
+    width: 180px;
+    ul {
+        list-style: none;
+        padding-left: 15px;
+        li {
+            line-height: 30px;
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 0.9rem;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }

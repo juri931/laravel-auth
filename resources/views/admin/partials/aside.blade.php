@@ -1,8 +1,18 @@
-<div class="main-wrapper d-flex">
-    <aside class="bg-dark navbar-primary text-white">
-        aside
-    </aside>
-    <div class="content">
-        @yield('content')
-    </div>
-</div>
+<aside class="bg-dark navbar-primary text-white">
+    <nav>
+        <ul>
+            <li>
+                <a href="#"><i class="fa-solid fa-terminal"></i>Projects</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-circle-plus"></i>Nuovo Progetto</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-list-check"></i>Categorie</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-terminal"></i>Tags</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
