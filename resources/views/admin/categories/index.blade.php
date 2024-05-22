@@ -50,7 +50,7 @@
                             id="form-edit-{{ $category->id }}">
                             @csrf
                             @method('PUT')
-                            <input type="text" value="{{ $category->name }}">
+                            <input type="text" value="{{ $category->name }}" name="name">
                         </form>
                     </td>
 

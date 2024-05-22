@@ -80,7 +80,7 @@ class CategoryController extends Controller
             $val_data['slug'] = Helper::generateSlug($request->name, Category::class);
             $category->update($val_data);
 
-            return redirect()->route('admin.categories.index')->with('success', 'Categoria creata correttamente');
+            return redirect()->route('admin.categories.index')->with('success', 'Categoria modificata correttamente');
         }
     }
 
