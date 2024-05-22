@@ -1,1 +1,13 @@
-@import '~bootstrap/scss/bootstrap'
+@import "~bootstrap/scss/bootstrap";
+
+header {
+    height: 73px;
+}
+
+.main-wrapper {
+    height: calc(100vh - 73px);
+}
+
+aside {
+    width: 150px;
+}

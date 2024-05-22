@@ -1,4 +1,4 @@
-<header>
+<header class="bg-dark">
     <div class="container d-flex justify-content-between">
 
         <ul class="nav">
