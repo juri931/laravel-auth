@@ -19,6 +19,7 @@ class CategoryTableSeeder extends Seeder
             $new_item = new Category();
             $new_item->name = $item;
             $new_item->slug = Helper::generateSlug($item, Category::class);
+            $new_item->save();
         }
     }
 }
