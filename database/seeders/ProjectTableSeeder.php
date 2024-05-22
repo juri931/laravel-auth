@@ -19,8 +19,9 @@ class ProjectTableSeeder extends Seeder
             $new_project = new Project();
             $new_project->name = $faker->name();
             $new_project->slug = Helper::generateSlug($new_project->name, Project::class);
+            $new_project->category = $faker->name();
             $new_project->description = $faker->text(200);
-            $new_project->date = $faker->date();
+            $new_project->created = $faker->date();
             $new_project->save();
         }
     }
