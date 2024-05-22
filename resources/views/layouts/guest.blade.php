@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>Document</title>
+    <title>Home Guest</title>
 </head>
 <body>
     @yield('content')

@@ -1,5 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <h1>Home Pubblica</h1>
+    <div class="container">
+        <h1>Home Pubblica</h1>
+    </div>
 @endsection

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>Document</title>
+    <title>Admin Home</title>
 </head>
 <body>
     @include('admin.partials.header')
