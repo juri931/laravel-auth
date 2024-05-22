@@ -3,9 +3,18 @@
 @section('content')
     <h2>Categorie</h2>
 
-    <div class="d-flex my4">
-        <input class="form-control me-2" type="search" placeholder="Nuova Categoria" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Invia</button>
+    @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    <div class="my-4">
+        <form action="{{ route('admin.categories.store') }}" method="POST" class="d-flex">
+            @csrf
+            <input class="form-control me-2" type="search" placeholder="Nuova Categoria" name="name">
+            <button class="btn btn-outline-success" type="submit">Invia</button>
+        </form>
     </div>
 
     <table class="table crud-table">

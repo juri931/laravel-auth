@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Functions\Helper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -30,7 +31,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exists = Category::where('name', $request->name)->first();
+        if ($exists) {
+            return redirect()->route('admin.categories.index')->with('error', 'Categoria già esistente');
+        }else{
+            $new = new Category();
+            $new->name = $request->name;
+            $new->slug = Helper::generateSlug($new->name, Category::class);
+            $new->save();
+
+            return redirect()->route('admin.categories.index')->with('success', 'Categoria creata correttamente');
+        }
     }
 
     /**
