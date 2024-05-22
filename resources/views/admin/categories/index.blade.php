@@ -28,15 +28,32 @@
             @foreach ($categories as $category)
                 <tr>
                     <td>
-                        <input type="text" value="{{ $category->name }}">
+                        <form
+                            action="{{ route('admin.categories.update', $category) }}"
+                            method="POST"
+                            id="form-edit-{{ $category->id }}">
+                            @csrf
+                            @method('PUT')
+                            <input type="text" value="{{ $category->name }}">
+                        </form>
                     </td>
 
                     <td>
-                        <button class="btn btn-warning"><i class="fa-solid fa-pencil"></i></button>
+                        <button
+                            class="btn btn-warning"
+                            onclick="submitForm({{ $category->id }})">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
                         <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <script>
+        function submitForm(id) {
+            const form = document.getElementById(`form-edit-${id}`);
+            form.submit();
+        }
+    </script>
 @endsection
