@@ -54,13 +54,21 @@
                         </form>
                     </td>
 
-                    <td>
+                    <td class="d-flex gap-1">
                         <button
                             class="btn btn-warning"
                             onclick="submitForm({{ $category->id }})">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
-                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+
+                        <form
+                            action="{{ route('admin.categories.destroy', $category) }}"
+                            mathod="POST"
+                            onsubmit="return confirm('Sicuro di voler eliminare la categoria {{ $category->name }}')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
