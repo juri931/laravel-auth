@@ -22,6 +22,9 @@ aside {
                 text-decoration: none;
                 color: white;
                 font-size: 0.9rem;
+                i {
+                    margin-right: 5px;
+                }
                 &:hover {
                     text-decoration: underline;
                 }
