@@ -16,5 +16,6 @@ class Helper{
             $exists = Project::where('slug', $slug)->first();
             $c++;
         }
+        return $slug;
     }
 }
