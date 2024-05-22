@@ -29,3 +29,13 @@ aside {
         }
     }
 }
+
+.crud-table {
+    td:first-child {
+        width: 350px;
+    }
+    input {
+        border: none;
+        outline: none;
+    }
+}
