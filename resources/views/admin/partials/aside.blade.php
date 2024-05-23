@@ -11,7 +11,7 @@
                 <a href="{{ route('admin.technologies.index') }}"><i class="fa-solid fa-list-check"></i>Tecnologie</a>
             </li>
             <li>
-                <a href="#"><i class="fa-solid fa-tags"></i></i>Tags</a>
+                <a href="#"><i class="fa-solid fa-tags"></i></i>Types</a>
             </li>
         </ul>
     </nav>
