@@ -62,8 +62,7 @@
                         </button>
 
                         <form
-                            action="{{ route('admin.technologies.destroy', $technology) }}"
-                            mathod="POST"
+                            action="{{ route('admin.technologies.destroy', $technology) }}" method="POST"
                             onsubmit="return confirm('Sicuro di voler eliminare la tecnologia {{ $technology->name }}?')">
                             @csrf
                             @method('DELETE')
