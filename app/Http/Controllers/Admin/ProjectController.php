@@ -31,7 +31,17 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exists = Project::where('name', $request->name)->first();
+        if ($exists) {
+            return redirect()->route('admin.projects.index')->with('error', 'Progetto già esistente');
+        }else{
+            $new = new Project();
+            $new->name = $request->name;
+            $new->slug = Helper::generateSlug($new->name, Project::class);
+            $new->save();
+
+            return redirect()->route('admin.projects.index')->with('success', 'Progetto creato correttamente');
+        }
     }
 
     /**
@@ -53,16 +63,33 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $val_data = $request->validate([
+            'name' => 'required|min:2|max:20',
+        ],[
+            'name.required' => 'Il nome è obbligatorio',
+            'name.min' => 'Il nome deve avere almeno 2 caratteri',
+            'name.max' => 'Il nome deve avere al massimo 20 caratteri',
+        ]);
+
+        $exists = Project::where('name', $request->name)->first();
+        if ($exists) {
+            return redirect()->route('admin.projects.index')->with('error', 'Progetto già esistente');
+        }else{
+            $val_data['slug'] = Helper::generateSlug($request->name, Project::class);
+            $project->update($val_data);
+
+            return redirect()->route('admin.projects.index')->with('success', 'Progetto modificato correttamente');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+        return redirect()->route('admin.projects.index')->with('success', 'Progetto eliminato correttamente');
     }
 }
