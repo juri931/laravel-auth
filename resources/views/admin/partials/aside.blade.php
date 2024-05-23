@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li>
-                <a href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-terminal"></i>Projects</a>
+                <a href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-terminal"></i>Progetti</a>
             </li>
             <li>
                 <a href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-circle-plus"></i>Nuovo Progetto</a>

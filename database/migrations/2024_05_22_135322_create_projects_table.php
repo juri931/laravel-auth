@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('slug', 100)->unique();
-            $table->string('category');
+            $table->string('category')->default('null');
             $table->text('description');
             $table->string('image')->nullable();
             $table->date('created');
