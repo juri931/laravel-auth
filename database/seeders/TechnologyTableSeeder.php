@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Category;
+use App\Models\Technology;
 use App\Functions\Helper;
 
-class CategoryTableSeeder extends Seeder
+class TechnologyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,9 @@ class CategoryTableSeeder extends Seeder
     {
         $data = ['HTML', 'CSS', 'JavaScript', 'PHP', 'C++'];
         foreach($data as $item){
-            $new_item = new Category();
+            $new_item = new Technology();
             $new_item->name = $item;
-            $new_item->slug = Helper::generateSlug($item, Category::class);
+            $new_item->slug = Helper::generateSlug($item, Technology::class);
             $new_item->save();
         }
     }

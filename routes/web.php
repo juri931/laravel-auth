@@ -5,8 +5,8 @@ use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Admin\TagController;
-use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Admin\TechnologyController;
 
 
 /*
@@ -28,8 +28,8 @@ Route::middleware(['auth', 'verified'])
                     ->group(function(){
                         Route::get('/', [DashboardController::class, 'index'])->name('home');
                         Route::resource('projects', ProjectController::class);
-                        Route::resource('tags', TagController::class);
-                        Route::resource('categories', CategoryController::class);
+                        Route::resource('types', TypeController::class);
+                        Route::resource('technologies', TechnologyController::class);
                     });
 
 Route::middleware('auth')->group(function () {

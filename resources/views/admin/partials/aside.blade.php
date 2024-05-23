@@ -8,7 +8,7 @@
                 <a href="#"><i class="fa-solid fa-circle-plus"></i>Nuovo Progetto</a>
             </li>
             <li>
-                <a href="{{ route('admin.categories.index') }}"><i class="fa-solid fa-list-check"></i>Categorie</a>
+                <a href="{{ route('admin.technologies.index') }}"><i class="fa-solid fa-list-check"></i>Tecnologie</a>
             </li>
             <li>
                 <a href="#"><i class="fa-solid fa-tags"></i></i>Tags</a>
