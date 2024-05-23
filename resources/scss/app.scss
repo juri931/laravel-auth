@@ -5,20 +5,27 @@ body {
 
 header {
     height: 50px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
 }
 
 .main-wrapper {
     height: calc(100vh - 50px);
     .content {
-        padding: 30px;
+        padding: 80px 210px;
     }
 }
 
 aside {
+    position: fixed;
+    left: 0;
+    top: 50px;
     width: 180px;
+    height: 100vh;
     ul {
         list-style: none;
         padding-left: 15px;
